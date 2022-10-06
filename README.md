@@ -1,6 +1,6 @@
 # Client Api
 
-## _Api desenvolvida para avaliação de Desenvolvedor Pleno_
+## Api desenvolvida para avaliação de Desenvolvedor Pleno
 
 - Api publicada no Heroku disponível em: https://sicredi-client-api.herokuapp.com/api/.
 - A documentação da Api via Swagger encontra-se disponível
@@ -16,9 +16,15 @@
 - JMeter
 - Liquibase
 - Heroku
-- Git Actions
 
 - ##### Conforme solicitado não foi implementado nenhuma segurança.
+
+## Instruções execução local
+
+- Instalar Oracle JDK 17
+- Instalar PostgreSQL latest version e criar um local database.
+- Alterar os apontamentos do arquivo properties para o novo banco local.
+- Executar o método main presente na classe ClientApiApplication.java
 
 ## Features:
 
