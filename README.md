@@ -2,8 +2,9 @@
 
 ## _Api desenvolvida para avaliação de Desenvolvedor Pleno_
 
-- Api publicada no Heroku disponível em: http://localhost:8080/api/swagger-ui/#/.
-- A documentação da Api via Swagger encontra-se disponível em: http://localhost:8080/api/swagger-ui/#/.
+- Api publicada no Heroku disponível em: https://sicredi-client-api.herokuapp.com/api/.
+- A documentação da Api via Swagger encontra-se disponível
+  em: https://sicredi-client-api.herokuapp.com/api/swagger-ui/#/.
 
 ## Tecnologias utilizadas:
 

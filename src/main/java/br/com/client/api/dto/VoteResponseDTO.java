@@ -8,7 +8,5 @@ import lombok.Data;
 @Builder
 public class VoteResponseDTO implements GenericResponseDTO {
     private Integer id;
-    private SessionResponseDTO session;
     private String descriptionVote;
-    private AssociateResponseDTO associate;
 }

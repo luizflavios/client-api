@@ -51,7 +51,7 @@ public class VoteService extends GenericRestService<VoteRequestDTO, VoteResponse
 
         Session session = sessionRepository.findById(vote.getSession().getId()).orElseThrow(EntityNotFoundException::new);
 
-        if (session.getEndOfVote().isBefore(LocalDateTime.now()) || session.getEndOfVote().isEqual(LocalDateTime.now())) {
+        if (session.getEndOfVote().isBefore(LocalDateTime.now().minusHours(3)) || session.getEndOfVote().isEqual(LocalDateTime.now().minusHours(3))) {
             throw new IllegalStateException("Vote session is finished");
         }
 
