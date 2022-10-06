@@ -42,20 +42,20 @@
 
 ## DER:
 
-![img_3.png](img_3.png)  
+![img_3.png](src/main/resources/static/img_3.png)  
 _Tabelas Databasechangelog/Databasechangeglock são utilizadas pelo Liquibase_
 
 ## JMeter:
 
 - Utilizando o JMeter para a Requisição de votação tivemos o seguinte resultado em uma amostra de 501 requisições:
-  ![img.png](img.png)
+  ![img.png](src/main/resources/static/img.png)
   _Apenas 2,9/sec de vazão, lembrando que o serviço faz um consumo externo (validação cpf) em um api hospedada no
   heroku._
 
 ## RabbitMQ:
 
 - Finalização do resultado da pauta, com o disparo de evento para o Cloud AMQP.
-  ![img_1.png](img_1.png)
+  ![img_1.png](src/main/resources/static/img_1.png)
 
 ## Versionamento:
 
@@ -64,4 +64,4 @@ _Tabelas Databasechangelog/Databasechangeglock são utilizadas pelo Liquibase_
 - Para as alterações de banco, usamos Liquibase para criação das migrations arquivadas no caminho
   /resources/db/changelog/changelogs:
 
-  ![img_2.png](img_2.png)
+  ![img_2.png](src/main/resources/static/img_2.png)
