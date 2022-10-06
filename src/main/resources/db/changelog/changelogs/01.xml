@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+
+    <changeSet id="1665066140168-1" author="Luiz Flavio (generated)">
+        <createTable tableName="associates">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_associates"/>
+            </column>
+            <column name="first_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cpf" type="varchar(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="enabled" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1665066140168-2" author="Luiz Flavio (generated)">
+        <createTable tableName="dockets">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_dockets"/>
+            </column>
+            <column name="theme" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1665066140168-3" author="Luiz Flavio (generated)">
+        <createTable tableName="sessions">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_sessions"/>
+            </column>
+            <column name="docket_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="start_of_vote" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="end_of_vote" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="enabled" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1665066140168-4" author="Luiz Flavio (generated)">
+        <createTable tableName="votes">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_votes"/>
+            </column>
+            <column name="session_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description_vote" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="associate_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1665066140168-5" author="Luiz Flavio (generated)">
+        <addForeignKeyConstraint baseColumnNames="docket_id" baseTableName="sessions"
+                                 constraintName="FK_SESSIONS_ON_DOCKET" referencedColumnNames="id"
+                                 referencedTableName="dockets"/>
+    </changeSet>
+    <changeSet id="1665066140168-6" author="Luiz Flavio (generated)">
+        <addForeignKeyConstraint baseColumnNames="associate_id" baseTableName="votes"
+                                 constraintName="FK_VOTES_ON_ASSOCIATE" referencedColumnNames="id"
+                                 referencedTableName="associates"/>
+    </changeSet>
+    <changeSet id="1665066140168-7" author="Luiz Flavio (generated)">
+        <addForeignKeyConstraint baseColumnNames="session_id" baseTableName="votes" constraintName="FK_VOTES_ON_SESSION"
+                                 referencedColumnNames="id" referencedTableName="sessions"/>
+    </changeSet>
+
+</databaseChangeLog>
